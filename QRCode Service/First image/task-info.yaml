@@ -126,6 +126,12 @@ files:
   - name: src/qrcodeapi/ImageCreator.java
     visible: true
     learner_created: true
+  - name: src/qrcodeapi/config/QrCodeConfig.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35506#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 21 Mar 2024 10:20:12 UTC"
 record: -1
