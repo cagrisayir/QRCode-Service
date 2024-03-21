@@ -123,6 +123,6 @@ files:
     \     } catch (NoSuchAlgorithmException e) {\n            throw new RuntimeException(e);\n\
     \        }\n    }\n}\n"
     learner_created: false
-feedback_link: https://hyperskill.org/projects/385/stages/2292/implement#comment
+feedback_link: https://hyperskill.org/learn/step/35507#comment
 status: Unchecked
 record: -1

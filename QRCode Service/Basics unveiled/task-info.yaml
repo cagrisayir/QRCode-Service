@@ -75,6 +75,6 @@ files:
           jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
       }
     learner_created: false
-feedback_link: https://hyperskill.org/projects/385/stages/2290/implement#comment
+feedback_link: https://hyperskill.org/learn/step/35505#comment
 status: Unchecked
 record: -1
