@@ -75,6 +75,12 @@ files:
           jvmArgs '--add-opens', 'java.base/java.lang=ALL-UNNAMED'
       }
     learner_created: false
+  - name: src/qrcodeapi/controller/AppController.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35505#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 21 Mar 2024 06:05:00 UTC"
 record: -1
