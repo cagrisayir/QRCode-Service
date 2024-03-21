@@ -198,6 +198,9 @@ files:
           }
       }
     learner_created: true
+  - name: src/qrcodeapi/service/QrCodeService.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35507#comment
 status: Unchecked
 record: -1
