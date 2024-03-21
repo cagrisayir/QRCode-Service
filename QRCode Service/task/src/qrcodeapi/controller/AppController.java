@@ -4,10 +4,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import qrcodeapi.service.QrCodeService;
 
 import java.awt.image.BufferedImage;
+import java.util.Map;
 
 @RestController
 public class AppController {
@@ -24,8 +26,16 @@ public class AppController {
     }
 
     @GetMapping("/api/qrcode")
-    public ResponseEntity<BufferedImage> getImage() {
-        BufferedImage bufferedImage = qrCodeService.create250();
-        return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(bufferedImage);
+    public ResponseEntity<?> getImage(@RequestParam int size,
+                                      @RequestParam String type) {
+
+        Map<String, String> error = qrCodeService.errorHandler(size, type);
+        if (!error.isEmpty())
+            return ResponseEntity.badRequest().body(error);
+
+        MediaType imageType = qrCodeService.getMediaType(type);
+
+        BufferedImage bufferedImage = qrCodeService.createImage(size);
+        return ResponseEntity.ok().contentType(imageType).body(bufferedImage);
     }
 }
