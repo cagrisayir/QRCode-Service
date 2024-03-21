@@ -27,16 +27,17 @@ public class AppController {
 
     @GetMapping("/api/qrcode")
     public ResponseEntity<?> getImage(@RequestParam String contents,
-                                      @RequestParam int size,
-                                      @RequestParam String type) {
+                                      @RequestParam(defaultValue = "L") Character correction,
+                                      @RequestParam(defaultValue = "250") int size,
+                                      @RequestParam(defaultValue = "png") String type) {
 
-        Map<String, String> error = qrCodeService.errorHandler(contents, size, type);
+        Map<String, String> error = qrCodeService.errorHandler(contents, correction, size, type);
         if (!error.isEmpty())
             return ResponseEntity.badRequest().body(error);
 
         MediaType imageType = qrCodeService.getMediaType(type);
 
-        BufferedImage bufferedImage = qrCodeService.createImage(contents, size);
+        BufferedImage bufferedImage = qrCodeService.createImage(contents, correction, size);
         return ResponseEntity.ok().contentType(imageType).body(bufferedImage);
     }
 }
